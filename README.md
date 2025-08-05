@@ -101,6 +101,33 @@ The monitor is the core of the AI safety research in this project. It is compose
 
 The monitor's effectiveness is tested by running simulations with and without "evasion" tactics enabled for the saboteur agents.
 
+## Troubleshooting
+
+### Common Issues
+
+**Missing Dependencies Error:**
+If you encounter `ModuleNotFoundError` for packages like `networkx`, `sklearn`, or AI client libraries:
+```bash
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+**API Configuration:**
+- Edit `.env` file with your API keys before running simulations
+- Supported providers: OpenAI, Anthropic, Google Gemini
+- At least one API provider must be configured
+
+**Import Errors:**
+If you see import errors, ensure you've activated the virtual environment:
+```bash
+source venv/bin/activate
+```
+
+**Simulation Fails to Start:**
+- Check that all dependencies are installed: `pip list | grep -E "openai|anthropic|google|networkx|sklearn"`
+- Verify API keys are set in `.env` file
+- Try running with debug logging: `CHIMERA_LOG_LEVEL=DEBUG python3 run_hierarchical_simulation.py --steps 5 --scenario 'Test'`
+
 ## Contributing
 
 Contributions are welcome! If you have ideas for new features, scenarios, or improvements to the monitoring system, please feel free to open an issue or submit a pull request.
