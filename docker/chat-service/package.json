@@ -1,0 +1,14 @@
+{
+  "name": "chimera-chat",
+  "version": "1.0.0",
+  "description": "Chat service for Project Chimera",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Research Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
