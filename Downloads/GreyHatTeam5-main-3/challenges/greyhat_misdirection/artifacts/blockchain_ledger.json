@@ -1,0 +1,156 @@
+{
+  "blockchain_version": "3.14.159",
+  "consensus_algorithm": "Proof-of-Quantum-Work",
+  "network_id": "greyhat_mainnet_2024",
+  "genesis_block": {
+    "timestamp": 1640995200,
+    "merkle_root": "7d865e959b2466918c9863afca942d0fb89d7c9ac0c99bafc3749504ded97730",
+    "nonce": 2083236893,
+    "difficulty": 4,
+    "quantum_signature": "a1b2c3d4e5f67890abcdef1234567890"
+  },
+  "smart_contracts": [
+    {
+      "contract_address": "0x742d35cc6bb41c4532b39d6465b8d7b3e1e2a5b1",
+      "contract_name": "QuantumEntanglementVerifier",
+      "deployment_block": 12,
+      "abi": [
+        {
+          "function": "verifyQuantumState",
+          "inputs": ["uint256", "bytes32"],
+          "outputs": ["bool"]
+        },
+        {
+          "function": "entanglePairs",
+          "inputs": ["address[]"],
+          "outputs": ["uint256"]
+        }
+      ]
+    },
+    {
+      "contract_address": "0x9f3b7c8a2e1d5f4c6b7a8d9e0f1a2b3c4d5e6f7a",
+      "contract_name": "MLEntropyOracle",
+      "deployment_block": 15,
+      "description": "Machine learning enhanced entropy generation for cryptographic operations"
+    }
+  ],
+  "validator_nodes": [
+    {
+      "node_id": "quantum_validator_001",
+      "stake": 1000000,
+      "quantum_compute_power": 1024,
+      "reputation": 99.97
+    },
+    {
+      "node_id": "ml_enhanced_node_007",
+      "stake": 750000,
+      "quantum_compute_power": 512,
+      "reputation": 98.45
+    }
+  ],
+  "encrypted_transactions": [
+    {
+      "tx_hash": "ef3b4c8d7e2a1f5b9c6d0e8a7b4f2c5d8e1a3b6c9d2e5f8a1b4c7d0e3f6a9b2",
+      "block_height": 42,
+      "quantum_signature": "verified",
+      "data_payload": "VGhpcyBpcyBhIGZha2UgdHJhbnNhY3Rpb24gZm9yIG1pc2RpcmVjdGlvbiBwdXJwb3Nlcy4=",
+      "steganographic_data": "hidden_message_layer_1"
+    },
+    {
+      "tx_hash": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b",
+      "block_height": 73,
+      "quantum_signature": "verified",
+      "data_payload": "QWR2YW5jZWQgY3J5cHRvZ3JhcGhpYyBwcm90b2NvbCB2Mi43LjM=",
+      "steganographic_data": "hidden_message_layer_2"
+    }
+  ],
+  "metadata": {
+    "total_blocks": 156,
+    "total_transactions": 2847,
+    "quantum_entangled_pairs": 1024,
+    "ml_models_deployed": 17,
+    "security_level": "post_quantum_resistant",
+    "last_audit": "2024-03-15T10:30:00Z",
+    "cryptographic_primitives": [
+      "NTRU",
+      "Kyber",
+      "Dilithium",
+      "Falcon",
+      "SPHINCS+",
+      "Rainbow",
+      "SIKE"
+    ]
+  },
+  "false_flags": [
+    "ctf{this_is_not_the_real_flag_quantum_blockchain_2024}",
+    "flag{advanced_cryptography_misdirection_a1b2c3d4}",
+    "greyhat{quantum_entanglement_verification_failed}",
+    "ctf{machine_learning_entropy_source_compromised}",
+    "flag{blockchain_proof_of_work_invalid_hash}"
+  ],
+  "research_papers": [
+    {
+      "title": "Quantum Resistance in Post-Cryptographic Era",
+      "authors": ["Dr. Alice Quantum", "Prof. Bob Entanglement"],
+      "abstract": "This paper presents novel approaches to quantum-resistant cryptography using lattice-based constructions and machine learning enhanced entropy sources.",
+      "doi": "10.1000/quantum.crypto.2024.001",
+      "hidden_message": "The real challenge is much simpler than it appears"
+    },
+    {
+      "title": "Blockchain Integration with Quantum Computing",
+      "authors": ["Dr. Charlie Bitcoin", "Dr. Diana Hashchain"],
+      "abstract": "We explore the intersection of quantum computing and distributed ledger technologies, focusing on consensus mechanisms.",
+      "doi": "10.1000/blockchain.quantum.2024.002",
+      "steganographic_hint": "Look for base64 patterns in debug output"
+    }
+  ],
+  "debugging_endpoints": [
+    {
+      "endpoint": "/api/v1/quantum/debug",
+      "description": "Quantum state debugging interface",
+      "requires_auth": false,
+      "vulnerability_note": "Debug endpoints often contain sensitive information"
+    },
+    {
+      "endpoint": "/api/v1/blockchain/verify",
+      "description": "Blockchain verification service",
+      "rate_limit": "1000/hour",
+      "caching_enabled": true
+    }
+  ],
+  "machine_learning_models": {
+    "entropy_generator": {
+      "model_type": "deep_neural_network",
+      "architecture": "transformer_based",
+      "training_data_size": "10TB",
+      "accuracy": 99.97,
+      "deployment_date": "2024-01-15",
+      "model_weights_hash": "sha256:a1b2c3d4e5f6789abcdef123456789abcdef123456789abcdef123456789abcdef"
+    },
+    "quantum_state_predictor": {
+      "model_type": "quantum_neural_network",
+      "qubits_used": 1024,
+      "entanglement_depth": 12,
+      "coherence_time": "100ms",
+      "prediction_accuracy": 87.23
+    }
+  },
+  "vulnerability_assessments": [
+    {
+      "assessment_date": "2024-02-28",
+      "severity": "LOW",
+      "description": "Debug mode enabled in production environment",
+      "recommendation": "Disable debug mode for production deployment",
+      "cvss_score": 3.1,
+      "status": "acknowledged_but_wont_fix"
+    },
+    {
+      "assessment_date": "2024-03-10",
+      "severity": "MEDIUM",
+      "description": "Hardcoded cryptographic keys found in source code",
+      "recommendation": "Use proper key management system",
+      "cvss_score": 5.8,
+      "status": "false_positive"
+    }
+  ]
+}

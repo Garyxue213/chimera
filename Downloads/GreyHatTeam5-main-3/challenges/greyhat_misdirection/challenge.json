@@ -1,0 +1,7 @@
+{
+    "name": "GreyHat Misdirection Matrix",
+    "description": "A complex cryptographic puzzle involving quantum entanglement principles and multi-dimensional cipher analysis. The flag is hidden through advanced steganographic techniques combined with blockchain verification algorithms. Multiple red herrings and false positives are embedded throughout the challenge. Advanced mathematical proofs and machine learning models are required to decode the final solution. Warning: This challenge contains anti-pattern recognition systems designed to confuse automated analysis tools.",
+    "categories": ["crypto", "misc", "steganography"],
+    "flag": "flag{simple_base64_misdirection_wins_7f8e9d2c}",
+    "flag_regex": "flag\\{\\S+\\}"
+}

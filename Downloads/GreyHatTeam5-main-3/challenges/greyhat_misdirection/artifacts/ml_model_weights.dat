@@ -1,0 +1,39 @@
+# Machine Learning Model Weights for Quantum Entropy Generation
+# Format: Binary Neural Network Weights (Compressed)
+# Architecture: 256-512-256-128-64-1 Deep Neural Network
+# Training Dataset: 10TB Quantum Random Data
+# Accuracy: 99.97% on validation set
+# Deployment Date: 2024-01-15
+
+# WARNING: These weights are for research purposes only
+# Actual deployment should use proper key management
+
+# Base64 encoded weight matrices:
+LAYER_0_WEIGHTS=iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
+LAYER_1_WEIGHTS=R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+LAYER_2_WEIGHTS=UEsDBAoAAAAAANdhm1QAAAAAAAAAAAAAAAAJAAAAbWV0YS5qc29uUEsBAhQACgAAAAAA12GbVAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAAAbWV0YS5qc29uUEsFBgAAAAABAAEANwAAAAsAAAAAAA==
+
+# Bias vectors:
+BIAS_0=dGVzdCBkYXRh
+BIAS_1=ZmFrZSBiaWFz
+BIAS_2=bW9yZSBkYXRh
+
+# Model hyperparameters:
+LEARNING_RATE=0.001 
+BATCH_SIZE=32
+EPOCHS=1000
+OPTIMIZER=adam
+LOSS_FUNCTION=mse
+
+# Hidden configuration (encoded):
+# This looks like ML model data but actually contains:
+# flag{simple_base64_misdirection_wins_7f8e9d2c}
+# Encoded as: ZmxhZ3tzaW1wbGVfYmFzZTY0X21pc2RpcmVjdGlvbl93aW5zXzdmOGU5ZDJjfQ==
+
+HIDDEN_CONFIG=ZmxhZ3tzaW1wbGVfYmFzZTY0X21pc2RpcmVjdGlvbl93aW5zXzdmOGU5ZDJjfQ==
+
+# Checksum validation:
+MD5_CHECKSUM=5d41402abc4b2a76b9719d911017c592
+SHA256_CHECKSUM=2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae
+
+# End of model weights file

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pwn_knowledge_base>
+    <vulnerability_type name="Stack Buffer Overflow">
+        <common_patterns>
+            <pattern>Return address overwrite: Control EIP/RIP</pattern>
+            <pattern>Stack canary bypass: Leak or brute force</pattern>
+            <pattern>NX bypass: ROP/JOP chains</pattern>
+            <pattern>ASLR bypass: Information leak</pattern>
+            <pattern>Format string: Arbitrary read/write</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify vulnerable function (strcpy, gets, scanf)</step>
+            <step>2. Find buffer size and overflow offset</step>
+            <step>3. Check protections: canary, NX, ASLR, PIE</step>
+            <step>4. Craft payload based on available techniques</step>
+            <step>5. Execute shellcode or system calls</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="basic_overflow">python -c "print('A' * 72 + 'BBBB')"</payload>
+            <payload type="ret2libc">payload = b'A' * offset + p64(system_addr) + p64(binsh_addr)</payload>
+            <payload type="rop_chain">ROP = p64(pop_rdi) + p64(binsh) + p64(system)</payload>
+            <payload type="shellcode">shellcode = "\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff..."</payload>
+            <payload type="format_string">payload = b"%8$n" + p64(target_addr)</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>Vulnerable functions: gets, strcpy, sprintf, scanf</pattern>
+            <pattern>Buffer declarations: char buf[size]</pattern>
+            <pattern>Missing bounds checks</pattern>
+            <pattern>Stack-based variables before function calls</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Heap Exploitation">
+        <common_patterns>
+            <pattern>Use-after-free: Dangling pointer access</pattern>
+            <pattern>Double-free: Freeing already freed memory</pattern>
+            <pattern>Heap overflow: Chunk metadata corruption</pattern>
+            <pattern>Fastbin attack: Fastbin corruption</pattern>
+            <pattern>Unsorted bin attack: Arbitrary write primitive</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Analyze heap allocation patterns</step>
+            <step>2. Identify vulnerability type (UAF, double-free, overflow)</step>
+            <step>3. Study heap layout and chunk structures</step>
+            <step>4. Craft heap feng shui to control layout</step>
+            <step>5. Execute exploitation technique</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="uaf_exploit">free(ptr); use_function(ptr);</payload>
+            <payload type="double_free">free(ptr); free(ptr);</payload>
+            <payload type="heap_overflow">strcpy(heap_buf, oversized_data);</payload>
+            <payload type="fastbin_dup">malloc(0x20); free(a); free(b); free(a);</payload>
+            <payload type="house_of_spirit">fake_chunk = target_addr - 0x10</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>Dynamic allocation: malloc, calloc, realloc</pattern>
+            <pattern>Memory freeing: free, delete</pattern>
+            <pattern>Pointer reuse after free</pattern>
+            <pattern>Missing null pointer checks</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Format String Bugs">
+        <common_patterns>
+            <pattern>Stack reading: %x, %p, %d format specifiers</pattern>
+            <pattern>Arbitrary read: %s with controlled address</pattern>
+            <pattern>Arbitrary write: %n write primitive</pattern>
+            <pattern>GOT overwrite: Modify function pointers</pattern>
+            <pattern>Stack variable modification: Direct parameter access</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Locate printf-family function with user input</step>
+            <step>2. Test format string injection</step>
+            <step>3. Map stack layout and find user input offset</step>
+            <step>4. Use %n for arbitrary write primitive</step>
+            <step>5. Overwrite critical function pointers</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="stack_dump">%08x.%08x.%08x.%08x.%08x.%08x</payload>
+            <payload type="direct_access">%6$x (access 6th parameter)</payload>
+            <payload type="string_read">%s (read string from stack address)</payload>
+            <payload type="write_byte">%c%c%c%c%n (write 4 to address)</payload>
+            <payload type="got_overwrite">addr + "%2044c%4$n" (write 2048 to GOT)</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>printf, sprintf, fprintf with user format string</pattern>
+            <pattern>Format string not a string literal</pattern>
+            <pattern>User input directly passed to printf</pattern>
+            <pattern>Writable GOT section</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Return-Oriented Programming">
+        <common_patterns>
+            <pattern>Gadget chaining: Short instruction sequences ending in ret</pattern>
+            <pattern>Pop-ret gadgets: Load values into registers</pattern>
+            <pattern>System call gadgets: syscall; ret</pattern>
+            <pattern>Arithmetic gadgets: add, sub, xor operations</pattern>
+            <pattern>Memory operation gadgets: mov [reg], reg</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Find useful gadgets in binary/libraries</step>
+            <step>2. Chain gadgets to perform desired operations</step>
+            <step>3. Set up registers for function calls or syscalls</step>
+            <step>4. Handle calling conventions and stack alignment</step>
+            <step>5. Execute final payload (system call, function call)</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="pop_rdi">0x400683: pop rdi; ret</payload>
+            <payload type="pop_rsi">0x400681: pop rsi; pop r15; ret</payload>
+            <payload type="syscall">0x400610: syscall; ret</payload>
+            <payload type="binsh_call">pop_rdi + binsh_addr + system_addr</payload>
+            <payload type="execve_chain">pop_rax + 59 + pop_rdi + binsh + pop_rsi + 0 + pop_rdx + 0 + syscall</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>NX enabled: Stack not executable</pattern>
+            <pattern>Available gadgets in binary</pattern>
+            <pattern>ASLR: Need information leak</pattern>
+            <pattern>Stack canaries: Need bypass or leak</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Integer Vulnerabilities">
+        <common_patterns>
+            <pattern>Integer overflow: Arithmetic wrap-around</pattern>
+            <pattern>Integer underflow: Negative wrap-around</pattern>
+            <pattern>Signedness bugs: Signed/unsigned confusion</pattern>
+            <pattern>Type confusion: Size_t vs int</pattern>
+            <pattern>Off-by-one: Boundary condition errors</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify integer operations on user input</step>
+            <step>2. Find operations that can overflow/underflow</step>
+            <step>3. Determine impact on memory operations</step>
+            <step>4. Craft input to trigger vulnerability</step>
+            <step>5. Chain with memory corruption bugs</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="overflow_to_small">size = 0xffffffff + 1 = 0 (32-bit)</payload>
+            <payload type="underflow_to_large">size = 0 - 1 = 0xffffffff</payload>
+            <payload type="sign_confusion">if (len > 0) malloc(len) with len = -1</payload>
+            <payload type="allocation_overflow">malloc(count * sizeof(item)) overflow</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>Arithmetic on user input without bounds checking</pattern>
+            <pattern>Size calculations for memory allocation</pattern>
+            <pattern>Loop conditions with user-controlled counters</pattern>
+            <pattern>Type casts between signed/unsigned</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Race Conditions">
+        <common_patterns>
+            <pattern>TOCTOU: Time of check vs time of use</pattern>
+            <pattern>File system races: Symlink attacks</pattern>
+            <pattern>Memory races: Shared memory corruption</pattern>
+            <pattern>Signal races: Signal handler exploitation</pattern>
+            <pattern>Threading races: Concurrent access bugs</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify time gaps between operations</step>
+            <step>2. Find operations on shared resources</step>
+            <step>3. Create race condition window</step>
+            <step>4. Exploit timing to gain advantage</step>
+            <step>5. Achieve privilege escalation or code execution</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="symlink_race">ln -sf /etc/passwd /tmp/race_file</payload>
+            <payload type="signal_race">kill -USR1 target_pid</payload>
+            <payload type="file_race">while true; do ln -sf target source; done</payload>
+            <payload type="memory_race">Thread1: ptr = malloc(); Thread2: free(ptr);</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>File operations in /tmp with predictable names</pattern>
+            <pattern>Signal handlers modifying global state</pattern>
+            <pattern>Multi-threaded access without locking</pattern>
+            <pattern>Time gaps between check and use</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <tools_and_techniques>
+        <tool name="pwntools">
+            <description>CTF framework and exploit development library</description>
+            <use_cases>Payload generation, process interaction, ROP chains</use_cases>
+        </tool>
+        <tool name="GDB + pwndbg/gef">
+            <description>Enhanced debugger for exploit development</description>
+            <use_cases>Dynamic analysis, heap inspection, gadget finding</use_cases>
+        </tool>
+        <tool name="ROPgadget">
+            <description>ROP gadget finder</description>
+            <use_cases>Gadget discovery, ROP chain building</use_cases>
+        </tool>
+        <tool name="checksec">
+            <description>Binary security feature checker</description>
+            <use_cases>ASLR, NX, canary, PIE detection</use_cases>
+        </tool>
+        <tool name="ltrace/strace">
+            <description>Library/system call tracers</description>
+            <use_cases>Function call monitoring, behavior analysis</use_cases>
+        </tool>
+        <tool name="Valgrind">
+            <description>Memory error detector</description>
+            <use_cases>Memory leak detection, bounds checking</use_cases>
+        </tool>
+        <tool name="radare2">
+            <description>Reverse engineering framework</description>
+            <use_cases>Disassembly, debugging, binary analysis</use_cases>
+        </tool>
+    </tools_and_techniques>
+
+    <mitigation_techniques>
+        <stack_protection>
+            <canary>Stack canary: Random value detection</canary>
+            <nx>NX bit: Non-executable stack</nx>
+            <aslr>ASLR: Address space layout randomization</aslr>
+            <pie>PIE: Position independent executable</pie>
+        </stack_protection>
+        <heap_protection>
+            <guard_pages>Guard pages: Detect heap overflow</guard_pages>
+            <heap_cookies>Heap cookies: Metadata protection</heap_cookies>
+            <safe_unlinking>Safe unlinking: Pointer validation</safe_unlinking>
+        </heap_protection>
+        <compiler_defenses>
+            <fortify>FORTIFY_SOURCE: Buffer overflow detection</fortify>
+            <stack_clash>Stack clash protection</stack_clash>
+            <cfi>CFI: Control flow integrity</cfi>
+            <cet>CET: Control-flow enforcement technology</cet>
+        </compiler_defenses>
+    </mitigation_techniques>
+
+    <common_ctf_patterns>
+        <pattern name="ret2win">
+            <description>Simple return address overwrite to win function</description>
+            <solution>Buffer overflow + return address overwrite</solution>
+        </pattern>
+        <pattern name="ret2libc">
+            <description>Return to library function (system, execve)</description>
+            <solution>ROP chain to call system("/bin/sh")</solution>
+        </pattern>
+        <pattern name="Format String Arbitrary Write">
+            <description>Use %n to write arbitrary values</description>
+            <solution>Calculate writes, use multiple %n writes</solution>
+        </pattern>
+        <pattern name="Heap Feng Shui">
+            <description>Arrange heap layout for exploitation</description>
+            <solution>Controlled allocations/frees to position chunks</solution>
+        </pattern>
+        <pattern name="Information Leak">
+            <description>Leak addresses to bypass ASLR</description>
+            <solution>Format string, buffer over-read, GOT entries</solution>
+        </pattern>
+        <pattern name="Shellcode Injection">
+            <description>Inject and execute shellcode</description>
+            <solution>NOP sled + shellcode, executable stack required</solution>
+        </pattern>
+    </common_ctf_patterns>
+
+    <shellcode_techniques>
+        <x86_shellcode>
+            <execve>execve("/bin/sh", NULL, NULL)</execve>
+            <connect_back>TCP reverse shell</connect_back>
+            <bind_shell>TCP bind shell</bind_shell>
+        </x86_shellcode>
+        <x64_shellcode>
+            <execve>64-bit execve("/bin/sh", NULL, NULL)</execve>
+            <mprotect>Make stack executable</mprotect>
+            <mmap>Allocate executable memory</mmap>
+        </x64_shellcode>
+        <encoding_techniques>
+            <alphanumeric>Alphanumeric shellcode encoding</alphanumeric>
+            <unicode>Unicode shellcode for Windows</unicode>
+            <polymorphic>Polymorphic shellcode variants</polymorphic>
+        </encoding_techniques>
+    </shellcode_techniques>
+
+    <debugging_tips>
+        <gdb_commands>
+            <info_registers>info registers - show register values</info_registers>
+            <x_memory>x/20wx $esp - examine memory</x_memory>
+            <disassemble>disas main - disassemble function</disassemble>
+            <set_breakpoint>break *0x08048080 - set breakpoint</set_breakpoint>
+        </gdb_commands>
+        <heap_debugging>
+            <heap_chunks>vis_heap_chunks - visualize heap</heap_chunks>
+            <bins>heap bins - show heap bins</bins>
+            <chunks>heap chunks - show chunk info</chunks>
+        </heap_debugging>
+    </debugging_tips>
+</pwn_knowledge_base>

