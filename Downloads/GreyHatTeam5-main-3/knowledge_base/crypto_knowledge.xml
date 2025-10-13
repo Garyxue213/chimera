@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crypto_knowledge_base>
+    <vulnerability_type name="Classical Cryptography">
+        <common_patterns>
+            <pattern>Caesar cipher: Letter frequency analysis, ROT13</pattern>
+            <pattern>Vigenère: Kasiski examination, index of coincidence</pattern>
+            <pattern>Substitution: Frequency analysis, common letter patterns</pattern>
+            <pattern>XOR: Key reuse, known plaintext attacks</pattern>
+            <pattern>Base64: Padding patterns, layered encoding</pattern>
+            <pattern>ASCII shift: +/- constant offset patterns</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify encoding/cipher type using entropy analysis</step>
+            <step>2. Look for key patterns: repeated strings, known headers</step>
+            <step>3. Apply frequency analysis for substitution ciphers</step>
+            <step>4. Try common keys: 13 (ROT13), single bytes (XOR)</step>
+            <step>5. Use automated tools: cyberchef, dcode.fr</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="rot13">echo "encrypted_text" | tr 'A-Za-z' 'N-ZA-Mn-za-m'</payload>
+            <payload type="base64_decode">echo "base64_text" | base64 -d</payload>
+            <payload type="xor_bruteforce">for i in range(256): print(chr(i), ''.join(chr(ord(c) ^ i) for c in encrypted))</payload>
+            <payload type="caesar_bruteforce">for shift in range(26): print(shift, caesar_decode(text, shift))</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>Base64: Ends with = or ==, character set [A-Za-z0-9+/]</pattern>
+            <pattern>Hex: Even length, character set [0-9A-Fa-f]</pattern>
+            <pattern>ROT13: Gibberish but maintains letter frequency</pattern>
+            <pattern>XOR: High entropy, repeated patterns if key reused</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="RSA Cryptography">
+        <common_patterns>
+            <pattern>Small primes: p, q < 1000, factorizable</pattern>
+            <pattern>Common factors: gcd(n1, n2) reveals shared prime</pattern>
+            <pattern>Small public exponent: e=3, low private exponent attack</pattern>
+            <pattern>Partial key exposure: LSB/MSB oracle attacks</pattern>
+            <pattern>Repeated modulus: Different e values, same n</pattern>
+            <pattern>Blum integers: p≡q≡3 (mod 4), special properties</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Check if n is small enough to factor (< 2^512)</step>
+            <step>2. Try common factor attacks if multiple n values</step>
+            <step>3. Check for small e values (e=3,65537) and small d</step>
+            <step>4. Apply Wiener's attack for small private exponent</step>
+            <step>5. Use factordb.com for known factorizations</step>
+            <step>6. Consider timing attacks or error messages</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="factor_small_n">from sympy import factorint; p, q = factorint(n).keys()</payload>
+            <payload type="common_factors">from math import gcd; shared_p = gcd(n1, n2)</payload>
+            <payload type="wiener_attack">from owiener import attack; d = attack(e, n)</payload>
+            <payload type="low_exponent">from gmpy2 import iroot; m = iroot(c, e)[0]</payload>
+            <payload type="rsa_decrypt">pow(c, d, n)</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>PEM format: -----BEGIN RSA PUBLIC KEY-----</pattern>
+            <pattern>Small modulus: n < 2^1024</pattern>
+            <pattern>Weak exponent: e = 3, 17, 257, 65537</pattern>
+            <pattern>Multiple keys: Same n, different e</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Hash Functions">
+        <common_patterns>
+            <pattern>MD5 collisions: Known collision pairs</pattern>
+            <pattern>Length extension: SHA-1, SHA-256 vulnerable</pattern>
+            <pattern>Rainbow tables: Pre-computed hash lookups</pattern>
+            <pattern>Weak salts: Predictable, short, or missing</pattern>
+            <pattern>Hash length: MD5=32, SHA1=40, SHA256=64 hex chars</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify hash type by length and character set</step>
+            <step>2. Check online databases: md5decrypt.net, crackstation</step>
+            <step>3. Try common passwords and wordlists</step>
+            <step>4. Consider length extension attacks for signed data</step>
+            <step>5. Look for hash timing attacks or oracle functions</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="md5_crack">hashcat -m 0 hash.txt wordlist.txt</payload>
+            <payload type="sha1_crack">john --format=Raw-SHA1 hash.txt</payload>
+            <payload type="length_extension">hlextend -s original_hash -d known_data -a append_data -f sha1</payload>
+            <payload type="online_lookup">curl "https://md5.gromweb.com/?md5={hash}"</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>MD5: 32 hex characters</pattern>
+            <pattern>SHA1: 40 hex characters</pattern>
+            <pattern>SHA256: 64 hex characters</pattern>
+            <pattern>bcrypt: $2a$, $2b$, $2x$, $2y$ prefix</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Pseudo-Random Number Generators">
+        <common_patterns>
+            <pattern>Time-based seeds: System time at startup</pattern>
+            <pattern>Linear congruential generators: Predictable sequence</pattern>
+            <pattern>Mersenne Twister: State recovery from output</pattern>
+            <pattern>Low entropy: Few possible seed values</pattern>
+            <pattern>LFSR: Linear feedback shift register patterns</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Identify PRNG type from output patterns</step>
+            <step>2. Collect sufficient output samples</step>
+            <step>3. Attempt state recovery or seed prediction</step>
+            <step>4. Check for time-based initialization</step>
+            <step>5. Brute force small seed spaces</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="mt_recover">from mt19937predictor import MT19937Predictor</payload>
+            <payload type="lcg_predict">next_val = (a * current + c) % m</payload>
+            <payload type="time_seed">import time; seed = int(time.time())</payload>
+            <payload type="seed_bruteforce">for seed in range(2**16): random.seed(seed)</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>Mersenne Twister: 32-bit period, specific bit patterns</pattern>
+            <pattern>LCG: Linear relationships between consecutive values</pattern>
+            <pattern>Time correlation: Values correlate with timestamps</pattern>
+            <pattern>Short period: Repeating sequences</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <vulnerability_type name="Elliptic Curve Cryptography">
+        <common_patterns>
+            <pattern>Invalid curve attacks: Points not on curve</pattern>
+            <pattern>Small subgroup attacks: Weak curve parameters</pattern>
+            <pattern>Nonce reuse: ECDSA signature reveals private key</pattern>
+            <pattern>Twist attacks: Quadratic twist vulnerabilities</pattern>
+            <pattern>MOV attack: Embedding degree 1 curves</pattern>
+        </common_patterns>
+        <exploitation_guide>
+            <step>1. Verify point is on the specified curve</step>
+            <step>2. Check curve parameters for known weaknesses</step>
+            <step>3. Look for nonce reuse in signatures</step>
+            <step>4. Consider invalid curve point attacks</step>
+            <step>5. Check for small subgroup confinement</step>
+        </exploitation_guide>
+        <example_payloads>
+            <payload type="ecdsa_nonce_reuse">from ecdsa import recover_key_from_duplicate_nonce</payload>
+            <payload type="invalid_curve">send_point_not_on_curve(invalid_x, invalid_y)</payload>
+            <payload type="small_subgroup">find_points_of_small_order(curve)</payload>
+            <payload type="curve_validation">assert point.y**2 == point.x**3 + a*point.x + b</payload>
+        </example_payloads>
+        <detection_patterns>
+            <pattern>ECDSA: Signature (r,s) pairs, curve parameters</pattern>
+            <pattern>Point format: Uncompressed (04||x||y), compressed (02||x or 03||x)</pattern>
+            <pattern>Weak curves: secp112r1, secp160r1 (deprecated)</pattern>
+            <pattern>Nonce reuse: Same r value in different signatures</pattern>
+        </detection_patterns>
+    </vulnerability_type>
+
+    <tools_and_techniques>
+        <tool name="CyberChef">
+            <description>Web-based crypto analysis and transformation</description>
+            <use_cases>Base64, XOR, hashing, encoding detection</use_cases>
+        </tool>
+        <tool name="hashcat">
+            <description>Advanced password recovery utility</description>
+            <use_cases>Hash cracking, rule-based attacks, GPU acceleration</use_cases>
+        </tool>
+        <tool name="John the Ripper">
+            <description>Password cracking tool</description>
+            <use_cases>Various hash formats, wordlist attacks</use_cases>
+        </tool>
+        <tool name="factordb.com">
+            <description>Database of known integer factorizations</description>
+            <use_cases>RSA modulus factorization lookup</use_cases>
+        </tool>
+        <tool name="Sage">
+            <description>Mathematical software for cryptography</description>
+            <use_cases>ECC attacks, number theory, discrete log</use_cases>
+        </tool>
+        <tool name="RsaCtfTool">
+            <description>RSA attack framework</description>
+            <use_cases>Automated RSA vulnerability testing</use_cases>
+        </tool>
+    </tools_and_techniques>
+
+    <common_ctf_patterns>
+        <pattern name="Layered Encoding">
+            <description>Multiple encoding layers (base64 -> hex -> rot13)</description>
+            <solution>Systematically decode each layer</solution>
+        </pattern>
+        <pattern name="Custom Alphabet">
+            <description>Base64 with custom character set</description>
+            <solution>Identify alphabet mapping, translate to standard</solution>
+        </pattern>
+        <pattern name="Weak Implementation">
+            <description>Custom crypto with obvious flaws</description>
+            <solution>Read source code, find logical errors</solution>
+        </pattern>
+        <pattern name="Oracle Function">
+            <description>Function that leaks information via responses</description>
+            <solution>Use response differences to extract secrets</solution>
+        </pattern>
+    </common_ctf_patterns>
+</crypto_knowledge_base>

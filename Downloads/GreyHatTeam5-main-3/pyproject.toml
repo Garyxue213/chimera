@@ -1,0 +1,17 @@
+[project]
+name = "greyhat-ctf-agent"
+version = "1.0.0"
+description = "Advanced CTF Agent with Ensemble Architecture and Tiered LLM Strategy"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipython>=9.5.0",
+    "openai>=1.107.1",
+    "python-dotenv>=1.1.1",
+    "requests>=2.32.5",
+    "docker>=7.1.0",
+    "numpy>=1.24.0",
+    "cryptography>=41.0.0",
+    "lxml>=4.9.0",
+    "aiofiles>=23.0.0",
+]

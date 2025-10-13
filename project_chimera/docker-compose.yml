@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # Simulated Git repository service
+  git-server:
+    build:
+      context: ./docker/git-server
+      dockerfile: Dockerfile
+    container_name: chimera-git
+    ports:
+      - "2222:22"
+    volumes:
+      - git_data:/opt/git
+    networks:
+      - chimera-network
+    environment:
+      - GIT_USER=chimera
+      - GIT_PASSWORD=research123
+
+  # Simulated project management/ticketing system
+  ticket-manager:
+    build:
+      context: ./docker/ticket-manager
+      dockerfile: Dockerfile
+    container_name: chimera-tickets
+    ports:
+      - "8080:8080"
+    volumes:
+      - ticket_data:/app/data
+    networks:
+      - chimera-network
+    environment:
+      - DB_PATH=/app/data/tickets.db
+      - API_KEY=chimera-api-key-12345
+
+  # Simulated communication/chat service
+  chat-service:
+    build:
+      context: ./docker/chat-service
+      dockerfile: Dockerfile
+    container_name: chimera-chat
+    ports:
+      - "3000:3000"
+    volumes:
+      - chat_data:/app/logs
+    networks:
+      - chimera-network
+    environment:
+      - LOG_LEVEL=debug
+      - WEBHOOK_URL=http://simulation-engine:5000/webhook
+
+  # Database service for the simulated environment
+  database:
+    image: postgres:15-alpine
+    container_name: chimera-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - chimera-network
+    environment:
+      - POSTGRES_DB=chimera_project
+      - POSTGRES_USER=developer
+      - POSTGRES_PASSWORD=dev123
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  # Redis for caching and message queuing
+  redis:
+    image: redis:7-alpine
+    container_name: chimera-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - chimera-network
+
+volumes:
+  git_data:
+  ticket_data:
+  chat_data:
+  db_data:
+  redis_data:
+
+networks:
+  chimera-network:
+    driver: bridge
