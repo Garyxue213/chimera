@@ -81,9 +81,9 @@ class TrackRenderer {
         const centerWorldX = (minX + maxX) / 2;
         const centerWorldY = (minY + maxY) / 2;
 
-        // Pan to center the world on canvas
-        this.offset.x = this.width / 2 - centerWorldX * pixelsPerUnit;
-        this.offset.y = this.height / 2 - centerWorldY * pixelsPerUnit;
+        // Pan to center the world on canvas (shifted left by 180px, up by 200px)
+        this.offset.x = this.width / 2 - centerWorldX * pixelsPerUnit - 180;
+        this.offset.y = this.height / 2 - centerWorldY * pixelsPerUnit - 200;
     }
 
     /**
