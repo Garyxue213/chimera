@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import LapTimeline from '../analysis/LapTimeline';
 import LapDetailCard from '../analysis/LapDetailCard';
 import PerformanceSummary from '../analysis/PerformanceSummary';
+import AudioPlayer from '../analysis/AudioPlayer';
+import ElevenLabsService from '../../services/ElevenLabsService';
 import '../../styles/lap-analysis-view.css';
 
 export default function LapAnalysisView({
@@ -12,13 +14,60 @@ export default function LapAnalysisView({
   const [lapData, setLapData] = useState(null);
   const [selectedLap, setSelectedLap] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [audioUrl, setAudioUrl] = useState(null);
+  const [generatingAudio, setGeneratingAudio] = useState(false);
+  const elevenLabsRef = useRef(new ElevenLabsService());
 
   useEffect(() => {
     loadLapData();
   }, [selectedDriver, selectedSession]);
 
+  useEffect(() => {
+    // Generate audio narration when lap is selected
+    if (selectedLap && selectedLap.analysis) {
+      generateLapNarration(selectedLap);
+    }
+  }, [selectedLap]);
+
+  const generateLapNarration = async (lap) => {
+    if (!lap.analysis) {
+      setAudioUrl(null);
+      return;
+    }
+
+    setGeneratingAudio(true);
+    try {
+      const audioBlob = await elevenLabsRef.current.narrateLapAnalysis(
+        lap.analysis,
+        lap
+      );
+
+      if (audioBlob) {
+        const url = elevenLabsRef.current.createAudioUrl(audioBlob);
+        setAudioUrl(url);
+      } else {
+        setAudioUrl(null);
+      }
+    } catch (error) {
+      console.error('Failed to generate narration:', error);
+      setAudioUrl(null);
+    } finally {
+      setGeneratingAudio(false);
+    }
+  };
+
+  // Cleanup audio URLs on unmount
+  useEffect(() => {
+    return () => {
+      if (audioUrl) {
+        elevenLabsRef.current.revokeAudioUrl(audioUrl);
+      }
+    };
+  }, []);
+
   const loadLapData = async () => {
     setLoading(true);
+    setAudioUrl(null);
     try {
       // Map session names to file names
       const sessionMap = {
@@ -100,6 +149,14 @@ export default function LapAnalysisView({
         </div>
 
         <div className="analysis-right">
+          {/* Audio Narration Player */}
+          {selectedLap && (
+            <AudioPlayer
+              audioUrl={audioUrl}
+              isLoading={generatingAudio}
+            />
+          )}
+
           {/* Detailed Lap View */}
           {selectedLap && (
             <LapDetailCard
