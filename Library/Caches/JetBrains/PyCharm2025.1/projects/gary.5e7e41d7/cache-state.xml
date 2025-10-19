@@ -1,0 +1,129 @@
+<project version="4">
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <directories>
+      <directory path="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules" />
+      <directory path="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/node_modules" />
+    </directories>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/bat/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/clojure/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/coffeescript/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/configuration-editing/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/cpp/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/csharp/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/css-language-features/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/css-language-features/server/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/css/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/dart/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/debug-auto-launch/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/debug-server-ready/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/diff/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/docker/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/emmet/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/extension-editing/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/fsharp/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/git-base/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/git/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/github-authentication/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/github/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/go/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/groovy/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/grunt/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/gulp/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/handlebars/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/hlsl/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/html-language-features/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/html-language-features/server/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/html/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/ini/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/ipynb/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/jake/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/java/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/javascript/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/json/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/julia/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/latex/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/less/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/log/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/lua/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/make/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/markdown-basics/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/markdown-language-features/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/markdown-math/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/media-preview/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/merge-conflict/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/microsoft-authentication/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/ms-vscode.js-debug-companion/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/ms-vscode.js-debug/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/ms-vscode.vscode-js-profile-table/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/notebook-renderers/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/npm/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/objective-c/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/perl/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/php-language-features/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/php/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/powershell/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/pug/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/python/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/r/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/razor/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/references-view/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/restructuredtext/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/ruby/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/rust/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/scss/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/search-result/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/shaderlab/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/shellscript/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/simple-browser/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/sql/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/swift/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/terminal-suggest/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-abyss/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-defaults/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-kimbie-dark/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-monokai-dimmed/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-monokai/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-quietlight/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-red/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-seti/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-solarized-dark/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-solarized-light/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/theme-tomorrow-night-blue/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/tunnel-forwarding/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/typescript-basics/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/typescript-language-features/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/vb/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/xml/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/yaml/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/Visual Studio Code.app/Contents/Resources/app/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/jason 2/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/jason 3/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/jason 4/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/jason/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/open-webui-0.5.4/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/open-webui-main/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/store/client/package.json" />
+      <path value="$PROJECT_DIR$/Downloads/store/server/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="RestoreUpdateTree"><![CDATA[{}]]></component>
+  <component name="VcsDirectoryMappingCache">
+    <option name="roots">
+      <set>
+        <option value="$PROJECT_DIR$" />
+      </set>
+    </option>
+    <option name="vcsName" value="Git" />
+  </component>
+</project>
