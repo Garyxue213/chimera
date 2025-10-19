@@ -1,0 +1,51 @@
+{
+  "driver_id": "BEA",
+  "executive_summary": {
+    "driver_id": "BEA",
+    "overall_performance": "strong",
+    "avg_performance_rating": 7.83,
+    "personal_bests": 10,
+    "deleted_laps": 2,
+    "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+    "best_lap_time": 93.139,
+    "primary_tire_compound": "MEDIUM",
+    "sample_insights": [
+      "BEA's lap in Sprint Qualifying",
+      "BEA's lap in Sprint Race",
+      "BEA's lap in Sprint Race"
+    ]
+  },
+  "session_breakdown": {
+    "Qualifying": {
+      "laps_analyzed": 5,
+      "best_lap_time": 93.139,
+      "avg_lap_time": 93.617,
+      "avg_performance_rating": 7.6,
+      "pbs_in_session": 4,
+      "deleted_in_session": 1
+    },
+    "Sprint Qualifying": {
+      "laps_analyzed": 1,
+      "best_lap_time": 95.159,
+      "avg_lap_time": 95.159,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 1,
+      "deleted_in_session": 0
+    },
+    "Sprint Race": {
+      "laps_analyzed": 6,
+      "best_lap_time": 98.435,
+      "avg_lap_time": 113.387,
+      "avg_performance_rating": 7.83,
+      "pbs_in_session": 5,
+      "deleted_in_session": 1
+    }
+  },
+  "telemetry_highlights": {
+    "max_speed_recorded": 214.0,
+    "avg_max_speed": 201.4,
+    "total_drs_events": 0,
+    "avg_drs_per_lap": 0.0
+  },
+  "analyses_count": 12
+}

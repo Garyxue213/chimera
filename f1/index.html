@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Performance Analysis Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(247, 147, 30, 0.3) 0%, transparent 50%);
+            animation: drift 15s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 30px); }
+        }
+
+        .container {
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            padding: 40px 20px;
+        }
+
+        /* F1 Logo */
+        .logo-section {
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .f1-logo {
+            width: 200px;
+            height: 120px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .f1-logo svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.5));
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #ff6b35;
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(30, 30, 50, 0.9) 0%, rgba(20, 20, 35, 0.9) 100%);
+            border: 2px solid transparent;
+            border-image: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) 1;
+            border-radius: 12px;
+            padding: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-image: linear-gradient(135deg, #ff6b35 0%, #ffffff 100%) 1;
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.3);
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            line-height: 1.5;
+        }
+
+        .card-link {
+            margin-top: auto;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .card-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(255, 107, 53, 0.05);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 12px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 107, 53, 0.2);
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Glow effect */
+        .glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 50px rgba(255, 107, 53, 0.8);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <!-- F1 Logo -->
+        <div class="logo-section">
+            <div class="f1-logo">
+                <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+                    <!-- F1 Logo SVG -->
+                    <defs>
+                        <linearGradient id="f1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff4500;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Main F1 shape -->
+                    <polygon points="150,200 450,200 550,400 200,400" fill="url(#f1Gradient)" />
+                    <polygon points="600,200 900,200 550,400 400,400" fill="url(#f1Gradient)" opacity="0.8" />
+
+                    <!-- TM mark -->
+                    <text x="750" y="450" font-size="40" font-weight="bold" fill="#ff6b35">™</text>
+                </svg>
+            </div>
+            <h1 class="glow">F1 PERFORMANCE HUB</h1>
+            <p class="subtitle">Austin US Grand Prix 3 - Complete Analysis Suite</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-section">
+            <div class="stat">
+                <span class="stat-number">20</span>
+                <span class="stat-label">Drivers</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">224</span>
+                <span class="stat-label">Laps</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Sessions</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Insights</span>
+            </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards-grid">
+            <!-- Dashboard Card -->
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <div class="card-title">React Dashboard</div>
+                <div class="card-description">
+                    Interactive performance analysis with real-time charts, driver profiles, and telemetry visualizations
+                </div>
+                <button class="card-link" onclick="window.open('http://localhost:3001', '_blank')">
+                    Open Dashboard
+                </button>
+            </div>
+
+            <!-- Race Animator Card -->
+            <div class="card">
+                <div class="card-icon">🏁</div>
+                <div class="card-title">Race Animator</div>
+                <div class="card-description">
+                    Live race simulation with real-time standings, circuit map, and driver telemetry tracking
+                </div>
+                <button class="card-link" onclick="window.open('http://localhost:3333', '_blank')">
+                    View Simulation
+                </button>
+            </div>
+
+            <!-- Analysis Engine Card -->
+            <div class="card">
+                <div class="card-icon">⏱️</div>
+                <div class="card-title">Lap Analysis</div>
+                <div class="card-description">
+                    Detailed lap-by-lap breakdown with issue identification and time loss analysis per driver
+                </div>
+                <button class="card-link" onclick="scrollToSection('analysis')">
+                    Learn More
+                </button>
+            </div>
+
+            <!-- Telemetry Card -->
+            <div class="card">
+                <div class="card-icon">📡</div>
+                <div class="card-title">Telemetry Data</div>
+                <div class="card-description">
+                    Comprehensive telemetry collection with speed traces, DRS events, and technical metrics
+                </div>
+                <button class="card-link" onclick="window.open('http://localhost:3001', '_blank')">
+                    View Data
+                </button>
+            </div>
+
+            <!-- Comparison Card -->
+            <div class="card">
+                <div class="card-icon">⚔️</div>
+                <div class="card-title">Driver Comparison</div>
+                <div class="card-description">
+                    Head-to-head performance analysis with competitive metrics and strategic insights
+                </div>
+                <button class="card-link" onclick="window.open('http://localhost:3001', '_blank')">
+                    Compare Now
+                </button>
+            </div>
+
+            <!-- Documentation Card -->
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <div class="card-title">Documentation</div>
+                <div class="card-description">
+                    Complete guides, quickstart instructions, and technical documentation for all tools
+                </div>
+                <button class="card-link" onclick="window.open('file:///Users/gary/f1/F1_COMPLETE_SYSTEM_SUMMARY.md', '_blank')">
+                    Read Docs
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>🏆 Austin US Grand Prix 3 • October 17-18, 2024</p>
+            <p>🔧 React Dashboard • FastF1 Engine • Gemini AI Analysis</p>
+            <p>⚡ Real-time telemetry • Lap-by-lap analysis • Performance insights</p>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

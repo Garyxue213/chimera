@@ -1,0 +1,43 @@
+{
+  "driver_id": "HAD",
+  "executive_summary": {
+    "driver_id": "HAD",
+    "overall_performance": "strong",
+    "avg_performance_rating": 7.44,
+    "personal_bests": 7,
+    "deleted_laps": 2,
+    "sessions_analyzed": "Sprint Qualifying, Sprint Race",
+    "best_lap_time": 94.241,
+    "primary_tire_compound": "MEDIUM",
+    "sample_insights": [
+      "HAD's lap in Sprint Qualifying",
+      "HAD's lap in Sprint Qualifying",
+      "HAD's lap in Sprint Qualifying"
+    ]
+  },
+  "session_breakdown": {
+    "Sprint Qualifying": {
+      "laps_analyzed": 3,
+      "best_lap_time": 94.241,
+      "avg_lap_time": 94.447,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 3,
+      "deleted_in_session": 0
+    },
+    "Sprint Race": {
+      "laps_analyzed": 6,
+      "best_lap_time": 99.018,
+      "avg_lap_time": 102.364,
+      "avg_performance_rating": 6.67,
+      "pbs_in_session": 4,
+      "deleted_in_session": 2
+    }
+  },
+  "telemetry_highlights": {
+    "max_speed_recorded": 213.0,
+    "avg_max_speed": 203.4,
+    "total_drs_events": 0,
+    "avg_drs_per_lap": 0.0
+  },
+  "analyses_count": 9
+}

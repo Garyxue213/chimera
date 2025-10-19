@@ -1,0 +1,51 @@
+{
+  "driver_id": "COL",
+  "executive_summary": {
+    "driver_id": "COL",
+    "overall_performance": "strong",
+    "avg_performance_rating": 7.83,
+    "personal_bests": 10,
+    "deleted_laps": 2,
+    "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+    "best_lap_time": 94.039,
+    "primary_tire_compound": "MEDIUM",
+    "sample_insights": [
+      "COL's lap in Sprint Qualifying",
+      "COL's lap in Sprint Qualifying",
+      "COL's lap in Sprint Race"
+    ]
+  },
+  "session_breakdown": {
+    "Qualifying": {
+      "laps_analyzed": 4,
+      "best_lap_time": 94.039,
+      "avg_lap_time": 98.027,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 4,
+      "deleted_in_session": 0
+    },
+    "Sprint Qualifying": {
+      "laps_analyzed": 2,
+      "best_lap_time": 95.246,
+      "avg_lap_time": 95.923,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 2,
+      "deleted_in_session": 0
+    },
+    "Sprint Race": {
+      "laps_analyzed": 6,
+      "best_lap_time": 99.235,
+      "avg_lap_time": 103.868,
+      "avg_performance_rating": 6.67,
+      "pbs_in_session": 4,
+      "deleted_in_session": 2
+    }
+  },
+  "telemetry_highlights": {
+    "max_speed_recorded": 211.0,
+    "avg_max_speed": 200.4,
+    "total_drs_events": 0,
+    "avg_drs_per_lap": 0.0
+  },
+  "analyses_count": 12
+}

@@ -1,0 +1,43 @@
+{
+  "driver_id": "PIA",
+  "executive_summary": {
+    "driver_id": "PIA",
+    "overall_performance": "exceptional",
+    "avg_performance_rating": 9,
+    "personal_bests": 9,
+    "deleted_laps": 0,
+    "sessions_analyzed": "Qualifying, Sprint Qualifying",
+    "best_lap_time": 92.523,
+    "primary_tire_compound": "SOFT",
+    "sample_insights": [
+      "PIA's lap in Sprint Qualifying",
+      "PIA's lap in Sprint Qualifying",
+      "PIA's lap in Sprint Qualifying"
+    ]
+  },
+  "session_breakdown": {
+    "Qualifying": {
+      "laps_analyzed": 5,
+      "best_lap_time": 93.084,
+      "avg_lap_time": 93.469,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 5,
+      "deleted_in_session": 0
+    },
+    "Sprint Qualifying": {
+      "laps_analyzed": 4,
+      "best_lap_time": 92.523,
+      "avg_lap_time": 93.519,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 4,
+      "deleted_in_session": 0
+    }
+  },
+  "telemetry_highlights": {
+    "max_speed_recorded": 212.0,
+    "avg_max_speed": 211.6,
+    "total_drs_events": 0,
+    "avg_drs_per_lap": 0.0
+  },
+  "analyses_count": 9
+}

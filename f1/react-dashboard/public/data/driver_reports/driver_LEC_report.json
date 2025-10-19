@@ -1,0 +1,51 @@
+{
+  "driver_id": "LEC",
+  "executive_summary": {
+    "driver_id": "LEC",
+    "overall_performance": "exceptional",
+    "avg_performance_rating": 9,
+    "personal_bests": 13,
+    "deleted_laps": 0,
+    "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+    "best_lap_time": 92.807,
+    "primary_tire_compound": "MEDIUM",
+    "sample_insights": [
+      "LEC's lap in Sprint Qualifying",
+      "LEC's lap in Sprint Qualifying",
+      "LEC's lap in Sprint Qualifying"
+    ]
+  },
+  "session_breakdown": {
+    "Qualifying": {
+      "laps_analyzed": 4,
+      "best_lap_time": 92.807,
+      "avg_lap_time": 94.129,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 4,
+      "deleted_in_session": 0
+    },
+    "Sprint Qualifying": {
+      "laps_analyzed": 5,
+      "best_lap_time": 93.104,
+      "avg_lap_time": 94.317,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 5,
+      "deleted_in_session": 0
+    },
+    "Sprint Race": {
+      "laps_analyzed": 4,
+      "best_lap_time": 97.391,
+      "avg_lap_time": 120.879,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 4,
+      "deleted_in_session": 0
+    }
+  },
+  "telemetry_highlights": {
+    "max_speed_recorded": 214.0,
+    "avg_max_speed": 192.0,
+    "total_drs_events": 0,
+    "avg_drs_per_lap": 0.0
+  },
+  "analyses_count": 13
+}

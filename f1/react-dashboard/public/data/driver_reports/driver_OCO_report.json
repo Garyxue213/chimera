@@ -1,0 +1,51 @@
+{
+  "driver_id": "OCO",
+  "executive_summary": {
+    "driver_id": "OCO",
+    "overall_performance": "exceptional",
+    "avg_performance_rating": 8.12,
+    "personal_bests": 7,
+    "deleted_laps": 1,
+    "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+    "best_lap_time": 94.136,
+    "primary_tire_compound": "MEDIUM",
+    "sample_insights": [
+      "OCO's lap in Sprint Qualifying",
+      "OCO's lap in Sprint Race",
+      "OCO's lap in Sprint Race"
+    ]
+  },
+  "session_breakdown": {
+    "Qualifying": {
+      "laps_analyzed": 2,
+      "best_lap_time": 94.136,
+      "avg_lap_time": 94.334,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 2,
+      "deleted_in_session": 0
+    },
+    "Sprint Qualifying": {
+      "laps_analyzed": 1,
+      "best_lap_time": 96.003,
+      "avg_lap_time": 96.003,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 1,
+      "deleted_in_session": 0
+    },
+    "Sprint Race": {
+      "laps_analyzed": 5,
+      "best_lap_time": 98.701,
+      "avg_lap_time": 116.074,
+      "avg_performance_rating": 7.6,
+      "pbs_in_session": 4,
+      "deleted_in_session": 1
+    }
+  },
+  "telemetry_highlights": {
+    "max_speed_recorded": 213.0,
+    "avg_max_speed": 192.9,
+    "total_drs_events": 0,
+    "avg_drs_per_lap": 0.0
+  },
+  "analyses_count": 8
+}

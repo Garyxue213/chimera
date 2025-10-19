@@ -1,0 +1,51 @@
+{
+  "driver_id": "RUS",
+  "executive_summary": {
+    "driver_id": "RUS",
+    "overall_performance": "exceptional",
+    "avg_performance_rating": 8,
+    "personal_bests": 12,
+    "deleted_laps": 2,
+    "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+    "best_lap_time": 92.826,
+    "primary_tire_compound": "MEDIUM",
+    "sample_insights": [
+      "RUS's lap in Sprint Qualifying",
+      "RUS's lap in Sprint Qualifying",
+      "RUS's lap in Sprint Qualifying"
+    ]
+  },
+  "session_breakdown": {
+    "Qualifying": {
+      "laps_analyzed": 6,
+      "best_lap_time": 92.826,
+      "avg_lap_time": 93.236,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 6,
+      "deleted_in_session": 0
+    },
+    "Sprint Qualifying": {
+      "laps_analyzed": 3,
+      "best_lap_time": 92.888,
+      "avg_lap_time": 93.668,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 3,
+      "deleted_in_session": 0
+    },
+    "Sprint Race": {
+      "laps_analyzed": 5,
+      "best_lap_time": 96.556,
+      "avg_lap_time": 116.399,
+      "avg_performance_rating": 6.2,
+      "pbs_in_session": 3,
+      "deleted_in_session": 2
+    }
+  },
+  "telemetry_highlights": {
+    "max_speed_recorded": 213.0,
+    "avg_max_speed": 205.3,
+    "total_drs_events": 0,
+    "avg_drs_per_lap": 0.0
+  },
+  "analyses_count": 14
+}

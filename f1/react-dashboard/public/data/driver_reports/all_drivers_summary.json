@@ -1,0 +1,1019 @@
+{
+  "total_drivers": 20,
+  "drivers": [
+    "ALB",
+    "ALO",
+    "ANT",
+    "BEA",
+    "BOR",
+    "COL",
+    "GAS",
+    "HAD",
+    "HAM",
+    "HUL",
+    "LAW",
+    "LEC",
+    "NOR",
+    "OCO",
+    "PIA",
+    "RUS",
+    "SAI",
+    "STR",
+    "TSU",
+    "VER"
+  ],
+  "summary_stats": {
+    "total_strategic_laps_analyzed": 224,
+    "drivers_analyzed": 20
+  },
+  "driver_reports": {
+    "ALB": {
+      "driver_id": "ALB",
+      "executive_summary": {
+        "driver_id": "ALB",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 8.3,
+        "personal_bests": 9,
+        "deleted_laps": 1,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 93.099,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "ALB's lap in Sprint Qualifying",
+          "ALB's lap in Sprint Qualifying",
+          "ALB's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 2,
+          "best_lap_time": 93.67,
+          "avg_lap_time": 94.18,
+          "avg_performance_rating": 5.5,
+          "pbs_in_session": 1,
+          "deleted_in_session": 1
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 93.099,
+          "avg_lap_time": 94.184,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 4,
+          "best_lap_time": 98.22,
+          "avg_lap_time": 120.808,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 212.0,
+        "avg_max_speed": 199.7,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 10
+    },
+    "ALO": {
+      "driver_id": "ALO",
+      "executive_summary": {
+        "driver_id": "ALO",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 9,
+        "personal_bests": 7,
+        "deleted_laps": 0,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying",
+        "best_lap_time": 92.91,
+        "primary_tire_compound": "SOFT",
+        "sample_insights": [
+          "ALO's lap in Sprint Qualifying",
+          "ALO's lap in Sprint Qualifying",
+          "ALO's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 93.16,
+          "avg_lap_time": 93.438,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 3,
+          "best_lap_time": 92.91,
+          "avg_lap_time": 93.866,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 3,
+          "deleted_in_session": 0
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 213.0,
+        "avg_max_speed": 210.7,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 7
+    },
+    "ANT": {
+      "driver_id": "ANT",
+      "executive_summary": {
+        "driver_id": "ANT",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 8.46,
+        "personal_bests": 12,
+        "deleted_laps": 1,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 93.044,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "ANT's lap in Sprint Qualifying",
+          "ANT's lap in Sprint Qualifying",
+          "ANT's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 93.044,
+          "avg_lap_time": 93.401,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 3,
+          "best_lap_time": 94.018,
+          "avg_lap_time": 94.167,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 3,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 6,
+          "best_lap_time": 97.758,
+          "avg_lap_time": 117.604,
+          "avg_performance_rating": 7.83,
+          "pbs_in_session": 5,
+          "deleted_in_session": 1
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 213.0,
+        "avg_max_speed": 191.8,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 13
+    },
+    "BEA": {
+      "driver_id": "BEA",
+      "executive_summary": {
+        "driver_id": "BEA",
+        "overall_performance": "strong",
+        "avg_performance_rating": 7.83,
+        "personal_bests": 10,
+        "deleted_laps": 2,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 93.139,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "BEA's lap in Sprint Qualifying",
+          "BEA's lap in Sprint Race",
+          "BEA's lap in Sprint Race"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 5,
+          "best_lap_time": 93.139,
+          "avg_lap_time": 93.617,
+          "avg_performance_rating": 7.6,
+          "pbs_in_session": 4,
+          "deleted_in_session": 1
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 1,
+          "best_lap_time": 95.159,
+          "avg_lap_time": 95.159,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 1,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 6,
+          "best_lap_time": 98.435,
+          "avg_lap_time": 113.387,
+          "avg_performance_rating": 7.83,
+          "pbs_in_session": 5,
+          "deleted_in_session": 1
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 214.0,
+        "avg_max_speed": 201.4,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 12
+    },
+    "BOR": {
+      "driver_id": "BOR",
+      "executive_summary": {
+        "driver_id": "BOR",
+        "overall_performance": "consistent",
+        "avg_performance_rating": 6.38,
+        "personal_bests": 5,
+        "deleted_laps": 3,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 94.125,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "BOR's lap in Sprint Qualifying",
+          "BOR's lap in Sprint Race",
+          "BOR's lap in Sprint Race"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 2,
+          "best_lap_time": 94.125,
+          "avg_lap_time": 94.429,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 2,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 1,
+          "best_lap_time": 96.313,
+          "avg_lap_time": 96.313,
+          "avg_performance_rating": 2,
+          "pbs_in_session": 0,
+          "deleted_in_session": 1
+        },
+        "Sprint Race": {
+          "laps_analyzed": 5,
+          "best_lap_time": 98.746,
+          "avg_lap_time": 115.933,
+          "avg_performance_rating": 6.2,
+          "pbs_in_session": 3,
+          "deleted_in_session": 2
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 212.0,
+        "avg_max_speed": 192.1,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 8
+    },
+    "COL": {
+      "driver_id": "COL",
+      "executive_summary": {
+        "driver_id": "COL",
+        "overall_performance": "strong",
+        "avg_performance_rating": 7.83,
+        "personal_bests": 10,
+        "deleted_laps": 2,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 94.039,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "COL's lap in Sprint Qualifying",
+          "COL's lap in Sprint Qualifying",
+          "COL's lap in Sprint Race"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 94.039,
+          "avg_lap_time": 98.027,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 2,
+          "best_lap_time": 95.246,
+          "avg_lap_time": 95.923,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 2,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 6,
+          "best_lap_time": 99.235,
+          "avg_lap_time": 103.868,
+          "avg_performance_rating": 6.67,
+          "pbs_in_session": 4,
+          "deleted_in_session": 2
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 211.0,
+        "avg_max_speed": 200.4,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 12
+    },
+    "GAS": {
+      "driver_id": "GAS",
+      "executive_summary": {
+        "driver_id": "GAS",
+        "overall_performance": "strong",
+        "avg_performance_rating": 7.83,
+        "personal_bests": 10,
+        "deleted_laps": 2,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 93.599,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "GAS's lap in Sprint Qualifying",
+          "GAS's lap in Sprint Qualifying",
+          "GAS's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 93.599,
+          "avg_lap_time": 93.871,
+          "avg_performance_rating": 7.25,
+          "pbs_in_session": 3,
+          "deleted_in_session": 1
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 3,
+          "best_lap_time": 94.258,
+          "avg_lap_time": 94.92,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 3,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 5,
+          "best_lap_time": 98.932,
+          "avg_lap_time": 116.593,
+          "avg_performance_rating": 7.6,
+          "pbs_in_session": 4,
+          "deleted_in_session": 1
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 213.0,
+        "avg_max_speed": 198.5,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 12
+    },
+    "HAD": {
+      "driver_id": "HAD",
+      "executive_summary": {
+        "driver_id": "HAD",
+        "overall_performance": "strong",
+        "avg_performance_rating": 7.44,
+        "personal_bests": 7,
+        "deleted_laps": 2,
+        "sessions_analyzed": "Sprint Qualifying, Sprint Race",
+        "best_lap_time": 94.241,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "HAD's lap in Sprint Qualifying",
+          "HAD's lap in Sprint Qualifying",
+          "HAD's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Sprint Qualifying": {
+          "laps_analyzed": 3,
+          "best_lap_time": 94.241,
+          "avg_lap_time": 94.447,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 3,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 6,
+          "best_lap_time": 99.018,
+          "avg_lap_time": 102.364,
+          "avg_performance_rating": 6.67,
+          "pbs_in_session": 4,
+          "deleted_in_session": 2
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 213.0,
+        "avg_max_speed": 203.4,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 9
+    },
+    "HAM": {
+      "driver_id": "HAM",
+      "executive_summary": {
+        "driver_id": "HAM",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 8.07,
+        "personal_bests": 13,
+        "deleted_laps": 2,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 92.912,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "HAM's lap in Sprint Qualifying",
+          "HAM's lap in Sprint Qualifying",
+          "HAM's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 92.912,
+          "avg_lap_time": 93.298,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 93.035,
+          "avg_lap_time": 93.84,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 7,
+          "best_lap_time": 97.096,
+          "avg_lap_time": 110.943,
+          "avg_performance_rating": 7,
+          "pbs_in_session": 5,
+          "deleted_in_session": 2
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 214.0,
+        "avg_max_speed": 202.1,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 15
+    },
+    "HUL": {
+      "driver_id": "HUL",
+      "executive_summary": {
+        "driver_id": "HUL",
+        "overall_performance": "strong",
+        "avg_performance_rating": 7.69,
+        "personal_bests": 13,
+        "deleted_laps": 3,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 92.645,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "HUL's lap in Sprint Qualifying",
+          "HUL's lap in Sprint Qualifying",
+          "HUL's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 93.334,
+          "avg_lap_time": 93.661,
+          "avg_performance_rating": 7.25,
+          "pbs_in_session": 3,
+          "deleted_in_session": 1
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 92.645,
+          "avg_lap_time": 93.804,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 8,
+          "best_lap_time": 98.917,
+          "avg_lap_time": 109.764,
+          "avg_performance_rating": 7.25,
+          "pbs_in_session": 6,
+          "deleted_in_session": 2
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 213.0,
+        "avg_max_speed": 201.3,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 16
+    },
+    "LAW": {
+      "driver_id": "LAW",
+      "executive_summary": {
+        "driver_id": "LAW",
+        "overall_performance": "strong",
+        "avg_performance_rating": 7.38,
+        "personal_bests": 10,
+        "deleted_laps": 3,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 93.36,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "LAW's lap in Sprint Qualifying",
+          "LAW's lap in Sprint Qualifying",
+          "LAW's lap in Sprint Race"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 93.36,
+          "avg_lap_time": 93.717,
+          "avg_performance_rating": 7.25,
+          "pbs_in_session": 3,
+          "deleted_in_session": 1
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 2,
+          "best_lap_time": 94.316,
+          "avg_lap_time": 94.459,
+          "avg_performance_rating": 5.5,
+          "pbs_in_session": 1,
+          "deleted_in_session": 1
+        },
+        "Sprint Race": {
+          "laps_analyzed": 7,
+          "best_lap_time": 98.654,
+          "avg_lap_time": 111.043,
+          "avg_performance_rating": 8,
+          "pbs_in_session": 6,
+          "deleted_in_session": 1
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 214.0,
+        "avg_max_speed": 199.2,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 13
+    },
+    "LEC": {
+      "driver_id": "LEC",
+      "executive_summary": {
+        "driver_id": "LEC",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 9,
+        "personal_bests": 13,
+        "deleted_laps": 0,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 92.807,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "LEC's lap in Sprint Qualifying",
+          "LEC's lap in Sprint Qualifying",
+          "LEC's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 92.807,
+          "avg_lap_time": 94.129,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 5,
+          "best_lap_time": 93.104,
+          "avg_lap_time": 94.317,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 5,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 4,
+          "best_lap_time": 97.391,
+          "avg_lap_time": 120.879,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 214.0,
+        "avg_max_speed": 192.0,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 13
+    },
+    "NOR": {
+      "driver_id": "NOR",
+      "executive_summary": {
+        "driver_id": "NOR",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 8.22,
+        "personal_bests": 8,
+        "deleted_laps": 1,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying",
+        "best_lap_time": 92.214,
+        "primary_tire_compound": "SOFT",
+        "sample_insights": [
+          "NOR's lap in Sprint Qualifying",
+          "NOR's lap in Sprint Qualifying",
+          "NOR's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 5,
+          "best_lap_time": 92.801,
+          "avg_lap_time": 98.543,
+          "avg_performance_rating": 7.6,
+          "pbs_in_session": 4,
+          "deleted_in_session": 1
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 92.214,
+          "avg_lap_time": 93.198,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 215.0,
+        "avg_max_speed": 211.2,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 9
+    },
+    "OCO": {
+      "driver_id": "OCO",
+      "executive_summary": {
+        "driver_id": "OCO",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 8.12,
+        "personal_bests": 7,
+        "deleted_laps": 1,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 94.136,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "OCO's lap in Sprint Qualifying",
+          "OCO's lap in Sprint Race",
+          "OCO's lap in Sprint Race"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 2,
+          "best_lap_time": 94.136,
+          "avg_lap_time": 94.334,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 2,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 1,
+          "best_lap_time": 96.003,
+          "avg_lap_time": 96.003,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 1,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 5,
+          "best_lap_time": 98.701,
+          "avg_lap_time": 116.074,
+          "avg_performance_rating": 7.6,
+          "pbs_in_session": 4,
+          "deleted_in_session": 1
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 213.0,
+        "avg_max_speed": 192.9,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 8
+    },
+    "PIA": {
+      "driver_id": "PIA",
+      "executive_summary": {
+        "driver_id": "PIA",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 9,
+        "personal_bests": 9,
+        "deleted_laps": 0,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying",
+        "best_lap_time": 92.523,
+        "primary_tire_compound": "SOFT",
+        "sample_insights": [
+          "PIA's lap in Sprint Qualifying",
+          "PIA's lap in Sprint Qualifying",
+          "PIA's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 5,
+          "best_lap_time": 93.084,
+          "avg_lap_time": 93.469,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 5,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 92.523,
+          "avg_lap_time": 93.519,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 212.0,
+        "avg_max_speed": 211.6,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 9
+    },
+    "RUS": {
+      "driver_id": "RUS",
+      "executive_summary": {
+        "driver_id": "RUS",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 8,
+        "personal_bests": 12,
+        "deleted_laps": 2,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 92.826,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "RUS's lap in Sprint Qualifying",
+          "RUS's lap in Sprint Qualifying",
+          "RUS's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 6,
+          "best_lap_time": 92.826,
+          "avg_lap_time": 93.236,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 6,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 3,
+          "best_lap_time": 92.888,
+          "avg_lap_time": 93.668,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 3,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 5,
+          "best_lap_time": 96.556,
+          "avg_lap_time": 116.399,
+          "avg_performance_rating": 6.2,
+          "pbs_in_session": 3,
+          "deleted_in_session": 2
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 213.0,
+        "avg_max_speed": 205.3,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 14
+    },
+    "SAI": {
+      "driver_id": "SAI",
+      "executive_summary": {
+        "driver_id": "SAI",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 8.42,
+        "personal_bests": 11,
+        "deleted_laps": 1,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 92.911,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "SAI's lap in Sprint Qualifying",
+          "SAI's lap in Sprint Qualifying",
+          "SAI's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 5,
+          "best_lap_time": 93.124,
+          "avg_lap_time": 93.299,
+          "avg_performance_rating": 7.6,
+          "pbs_in_session": 4,
+          "deleted_in_session": 1
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 92.911,
+          "avg_lap_time": 93.86,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 3,
+          "best_lap_time": 97.51,
+          "avg_lap_time": 128.972,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 3,
+          "deleted_in_session": 0
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 214.0,
+        "avg_max_speed": 204.2,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 12
+    },
+    "STR": {
+      "driver_id": "STR",
+      "executive_summary": {
+        "driver_id": "STR",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 8.22,
+        "personal_bests": 8,
+        "deleted_laps": 1,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 93.878,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "STR's lap in Sprint Qualifying",
+          "STR's lap in Sprint Qualifying",
+          "STR's lap in Sprint Race"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 2,
+          "best_lap_time": 93.878,
+          "avg_lap_time": 94.209,
+          "avg_performance_rating": 5.5,
+          "pbs_in_session": 1,
+          "deleted_in_session": 1
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 2,
+          "best_lap_time": 94.394,
+          "avg_lap_time": 94.691,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 2,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 5,
+          "best_lap_time": 98.766,
+          "avg_lap_time": 115.844,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 5,
+          "deleted_in_session": 0
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 213.0,
+        "avg_max_speed": 194.7,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 9
+    },
+    "TSU": {
+      "driver_id": "TSU",
+      "executive_summary": {
+        "driver_id": "TSU",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 9,
+        "personal_bests": 9,
+        "deleted_laps": 0,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 93.466,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "TSU's lap in Sprint Qualifying",
+          "TSU's lap in Sprint Race",
+          "TSU's lap in Sprint Race"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 3,
+          "best_lap_time": 93.466,
+          "avg_lap_time": 93.874,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 3,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 1,
+          "best_lap_time": 95.259,
+          "avg_lap_time": 95.259,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 1,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 5,
+          "best_lap_time": 98.268,
+          "avg_lap_time": 116.24,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 5,
+          "deleted_in_session": 0
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 212.0,
+        "avg_max_speed": 197.3,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 9
+    },
+    "VER": {
+      "driver_id": "VER",
+      "executive_summary": {
+        "driver_id": "VER",
+        "overall_performance": "exceptional",
+        "avg_performance_rating": 8,
+        "personal_bests": 12,
+        "deleted_laps": 2,
+        "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+        "best_lap_time": 92.143,
+        "primary_tire_compound": "MEDIUM",
+        "sample_insights": [
+          "VER's lap in Sprint Qualifying",
+          "VER's lap in Sprint Qualifying",
+          "VER's lap in Sprint Qualifying"
+        ]
+      },
+      "session_breakdown": {
+        "Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 92.51,
+          "avg_lap_time": 93.002,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Qualifying": {
+          "laps_analyzed": 4,
+          "best_lap_time": 92.143,
+          "avg_lap_time": 93.202,
+          "avg_performance_rating": 9,
+          "pbs_in_session": 4,
+          "deleted_in_session": 0
+        },
+        "Sprint Race": {
+          "laps_analyzed": 6,
+          "best_lap_time": 96.527,
+          "avg_lap_time": 113.409,
+          "avg_performance_rating": 6.67,
+          "pbs_in_session": 4,
+          "deleted_in_session": 2
+        }
+      },
+      "telemetry_highlights": {
+        "max_speed_recorded": 213.0,
+        "avg_max_speed": 206.6,
+        "total_drs_events": 0,
+        "avg_drs_per_lap": 0.0
+      },
+      "analyses_count": 14
+    }
+  }
+}

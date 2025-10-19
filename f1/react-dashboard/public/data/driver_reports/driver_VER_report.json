@@ -1,0 +1,51 @@
+{
+  "driver_id": "VER",
+  "executive_summary": {
+    "driver_id": "VER",
+    "overall_performance": "exceptional",
+    "avg_performance_rating": 8,
+    "personal_bests": 12,
+    "deleted_laps": 2,
+    "sessions_analyzed": "Qualifying, Sprint Qualifying, Sprint Race",
+    "best_lap_time": 92.143,
+    "primary_tire_compound": "MEDIUM",
+    "sample_insights": [
+      "VER's lap in Sprint Qualifying",
+      "VER's lap in Sprint Qualifying",
+      "VER's lap in Sprint Qualifying"
+    ]
+  },
+  "session_breakdown": {
+    "Qualifying": {
+      "laps_analyzed": 4,
+      "best_lap_time": 92.51,
+      "avg_lap_time": 93.002,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 4,
+      "deleted_in_session": 0
+    },
+    "Sprint Qualifying": {
+      "laps_analyzed": 4,
+      "best_lap_time": 92.143,
+      "avg_lap_time": 93.202,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 4,
+      "deleted_in_session": 0
+    },
+    "Sprint Race": {
+      "laps_analyzed": 6,
+      "best_lap_time": 96.527,
+      "avg_lap_time": 113.409,
+      "avg_performance_rating": 6.67,
+      "pbs_in_session": 4,
+      "deleted_in_session": 2
+    }
+  },
+  "telemetry_highlights": {
+    "max_speed_recorded": 213.0,
+    "avg_max_speed": 206.6,
+    "total_drs_events": 0,
+    "avg_drs_per_lap": 0.0
+  },
+  "analyses_count": 14
+}

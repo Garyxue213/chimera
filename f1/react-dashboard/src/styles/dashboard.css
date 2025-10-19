@@ -1,0 +1,21 @@
+.dashboard {
+  min-height: 100vh;
+  padding: 1rem 2rem 2rem 2rem;
+  background: var(--primary-bg);
+}
+
+.view-container {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,305 @@
+.lap-detail-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  height: fit-content;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.lap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--accent-orange);
+}
+
+.lap-header h2 {
+  font-size: 1.8rem;
+  color: var(--text-light);
+}
+
+.lap-time-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.lap-time {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+
+.lap-delta {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.section h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.assessment {
+  padding: 1rem;
+  background: rgba(74, 222, 128, 0.1);
+  border-left: 3px solid var(--accent-orange);
+  border-radius: 0.5rem;
+}
+
+.assessment p {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Sectors */
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.sector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 107, 53, 0.05);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: 0.5rem;
+}
+
+.sector-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.sector-time {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+
+/* Telemetry */
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.telemetry-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+}
+
+.telemetry-item .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.telemetry-item .value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+
+/* Tire */
+.tire-info {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+}
+
+.compound {
+  font-weight: 700;
+  color: var(--accent-orange);
+  font-size: 1rem;
+}
+
+.age {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Issues */
+.issues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.issue {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 3px solid;
+}
+
+.issue.high {
+  background: rgba(248, 113, 113, 0.1);
+  border-left-color: var(--developing);
+}
+
+.issue.medium {
+  background: rgba(251, 191, 36, 0.1);
+  border-left-color: var(--consistent);
+}
+
+.issue.low {
+  background: rgba(96, 165, 250, 0.1);
+  border-left-color: var(--strong);
+}
+
+.issue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.issue-header strong {
+  color: var(--text-light);
+}
+
+.severity {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  color: var(--text-muted);
+}
+
+.issue .description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.time-loss {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+.time-loss strong {
+  color: var(--accent-orange);
+}
+
+/* Highlights */
+.highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.highlight {
+  padding: 1rem;
+  background: rgba(74, 222, 128, 0.1);
+  border-left: 3px solid var(--exceptional);
+  border-radius: 0.5rem;
+}
+
+.highlight-header strong {
+  color: var(--exceptional);
+}
+
+.highlight .description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0;
+}
+
+.highlight .impact {
+  font-size: 0.85rem;
+  color: var(--exceptional);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* Comparison */
+.comparison-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.comp-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+}
+
+.comp-item .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.comp-item .value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-orange);
+}
+
+.comp-item .value.faster {
+  color: var(--exceptional);
+}
+
+.comp-item .value.slower {
+  color: var(--developing);
+}
+
+@media (max-width: 768px) {
+  .lap-detail-card {
+    padding: 1.5rem;
+  }
+
+  .lap-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sectors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .telemetry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-details {
+    grid-template-columns: 1fr;
+  }
+}

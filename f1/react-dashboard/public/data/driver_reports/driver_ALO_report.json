@@ -1,0 +1,43 @@
+{
+  "driver_id": "ALO",
+  "executive_summary": {
+    "driver_id": "ALO",
+    "overall_performance": "exceptional",
+    "avg_performance_rating": 9,
+    "personal_bests": 7,
+    "deleted_laps": 0,
+    "sessions_analyzed": "Qualifying, Sprint Qualifying",
+    "best_lap_time": 92.91,
+    "primary_tire_compound": "SOFT",
+    "sample_insights": [
+      "ALO's lap in Sprint Qualifying",
+      "ALO's lap in Sprint Qualifying",
+      "ALO's lap in Sprint Qualifying"
+    ]
+  },
+  "session_breakdown": {
+    "Qualifying": {
+      "laps_analyzed": 4,
+      "best_lap_time": 93.16,
+      "avg_lap_time": 93.438,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 4,
+      "deleted_in_session": 0
+    },
+    "Sprint Qualifying": {
+      "laps_analyzed": 3,
+      "best_lap_time": 92.91,
+      "avg_lap_time": 93.866,
+      "avg_performance_rating": 9,
+      "pbs_in_session": 3,
+      "deleted_in_session": 0
+    }
+  },
+  "telemetry_highlights": {
+    "max_speed_recorded": 213.0,
+    "avg_max_speed": 210.7,
+    "total_drs_events": 0,
+    "avg_drs_per_lap": 0.0
+  },
+  "analyses_count": 7
+}
